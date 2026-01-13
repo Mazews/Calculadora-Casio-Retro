@@ -1,0 +1,283 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: #f4e4d7;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container principal */
+.container {
+    perspective: 1000px;
+}
+
+/* Corpo da calculadora - Estilo sketch/retrô */
+.calculator {
+    background: #ebe0d5;
+    border: 3px solid #2a2a2a;
+    border-radius: 15px;
+    padding: 20px;
+    width: 350px;
+    box-shadow: 
+        5px 5px 0 #2a2a2a,
+        5px 5px 0 2px #2a2a2a;
+    position: relative;
+}
+
+.calculator::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 15px;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 2px,
+        rgba(42, 42, 42, 0.03) 2px,
+        rgba(42, 42, 42, 0.03) 4px
+    );
+    pointer-events: none;
+}
+
+/* Cabeçalho com marca */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    padding: 5px;
+    background: #d4c4b4;
+    border: 2px solid #2a2a2a;
+    border-radius: 8px;
+}
+
+.brand {
+    font-weight: bold;
+    font-size: 18px;
+    color: #2a2a2a;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.5);
+}
+
+.model {
+    text-align: right;
+    font-size: 9px;
+    color: #2a2a2a;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.model span {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* Painel solar */
+.solar-panel {
+    background: linear-gradient(90deg, 
+        #8a7a6a 0%,
+        #9a8a7a 20%,
+        #8a7a6a 40%,
+        #9a8a7a 60%,
+        #8a7a6a 80%,
+        #9a8a7a 100%
+    );
+    height: 15px;
+    border: 2px solid #2a2a2a;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Container do display */
+.display-container {
+    background: #b4a494;
+    border: 3px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 4px;
+    margin-bottom: 12px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Display */
+.display {
+    background: #d4e4d4;
+    border: 2px solid #2a2a2a;
+    border-radius: 5px;
+    padding: 15px 10px;
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-family: 'Courier New', monospace;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.previous-operand {
+    color: #4a4a4a;
+    font-size: 12px;
+    min-height: 15px;
+    opacity: 0.7;
+}
+
+.current-operand {
+    color: #1a1a1a;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Grid de botões */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+}
+
+/* Estilos base dos botões */
+.btn {
+    border: 3px solid #2a2a2a;
+    border-radius: 8px;
+    font-size: 15px;
+    padding: 12px 8px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 
+        3px 3px 0 #2a2a2a;
+    transition: all 0.1s ease;
+    position: relative;
+    font-family: 'Courier New', monospace;
+}
+
+.btn:hover {
+    transform: translate(1px, 1px);
+    box-shadow: 2px 2px 0 #2a2a2a;
+}
+
+.btn:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0 0 0 #2a2a2a;
+}
+
+/* Botões roxos de função (F1-F5) */
+.btn-purple-func {
+    background: #c4a4b4;
+    color: #2a2a2a;
+    font-size: 15px;
+}
+
+/* Botões roxos (SHIFT, OPTNS, etc) */
+.btn-purple {
+    background: #c4a4b4;
+    color: #2a2a2a;
+    font-size: 15px;
+}
+
+/* Botão ON redondo */
+.btn-pink-round {
+    background: #d4b4c4;
+    color: #2a2a2a;
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* Botões rosa claro */
+.btn-pink {
+    background: #e4d4c4;
+    color: #2a2a2a;
+    font-size: 15px;
+}
+
+/* Botão largo */
+.btn-pink-large {
+    background: #e4d4c4;
+    color: #2a2a2a;
+    grid-column: span 2;
+    font-size: 20px;
+}
+
+/* Botões de números (claros) */
+.btn-light {
+    background: #f4e4d4;
+    color: #2a2a2a;
+    font-size: 20px;
+}
+
+/* Botão de igual */
+.btn-equals {
+    background: #d4c4b4;
+    color: #2a2a2a;
+    grid-column: span 4;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    border: 3px solid #2a2a2a;
+    box-shadow: 4px 4px 0 #2a2a2a;
+}
+
+.btn-equals:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #2a2a2a;
+}
+
+.btn-equals:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 #2a2a2a;
+}
+
+/* Ajustes de layout específicos */
+.buttons > .btn:nth-child(1),
+.buttons > .btn:nth-child(2),
+.buttons > .btn:nth-child(3),
+.buttons > .btn:nth-child(4),
+.buttons > .btn:nth-child(5) {
+    font-size: 15px;
+    padding: 8px 5px;
+}
+
+/* Efeito de textura no fundo */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(42, 42, 42, 0.02) 2px,
+            rgba(42, 42, 42, 0.02) 4px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(42, 42, 42, 0.02) 2px,
+            rgba(42, 42, 42, 0.02) 4px
+        );
+    pointer-events: none;
+}
+
+/* Responsividade */
+@media (max-width: 400px) {
+    .calculator {
+        width: 100%;
+        max-width: 280px;
+    }
+}
