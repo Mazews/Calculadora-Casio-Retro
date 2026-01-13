@@ -9,16 +9,16 @@
 <body>
     <div class="container">
         <div class="calculator">
-            <!-- Cabeçalho Casio -->
+            <!-- cabeçalho -->
             <div class="header">
                 <div class="brand">CASIO</div>
                 <div class="model">Model 350<br><span>MS</span></div>
             </div>
             
-            <!-- Painel solar -->
+            <!-- painel solar -->
             <div class="solar-panel"></div>
             
-            <!-- Display -->
+            <!-- display -->
             <div class="display-container">
                 <div class="display">
                     <div class="previous-operand" id="previous"></div>
@@ -26,33 +26,33 @@
                 </div>
             </div>
             
-            <!-- Botões -->
+            <!-- botões -->
             <div class="buttons">
-                <!-- Linha de funções roxas -->
+                <!-- linha de funções roxas -->
                 <button class="btn btn-purple-func">F1</button>
                 <button class="btn btn-purple-func">F2</button>
                 <button class="btn btn-purple-func">F3</button>
                 <button class="btn btn-purple-func">F4</button>
                 <button class="btn btn-purple-func">F5</button>
                 
-                <!-- Linha SHIFT, ALPHA, etc -->
+                <!-- linha SHIFT, ALPHA, etc -->
                 <button class="btn btn-purple">SHIFT</button>
                 <button class="btn btn-purple">OPTNS</button>
                 <button class="btn btn-purple">VARS</button>
                 <button class="btn btn-pink-round" onclick="calculator.clear()">ON</button>
                 
-                <!-- Linha M+, M-, etc -->
+                <!-- linha M+, M-, etc -->
                 <button class="btn btn-pink">M+</button>
                 <button class="btn btn-pink">M-</button>
                 <button class="btn btn-pink">MR</button>
                 <button class="btn btn-pink">MC</button>
                 
-                <!-- Linha com DEL e AC -->
+                <!-- linha com DEL e AC -->
                 <button class="btn btn-pink-large" onclick="calculator.delete()">←</button>
                 <button class="btn btn-pink" onclick="calculator.delete()">DEL</button>
                 <button class="btn btn-pink" onclick="calculator.clear()">AC</button>
                 
-                <!-- Números e operações principais -->
+                <!-- números e operações principais -->
                 <button class="btn btn-light" onclick="calculator.appendNumber('7')">7</button>
                 <button class="btn btn-light" onclick="calculator.appendNumber('8')">8</button>
                 <button class="btn btn-light" onclick="calculator.appendNumber('9')">9</button>
@@ -73,12 +73,12 @@
                 <button class="btn btn-light">×10<sup>x</sup></button>
                 <button class="btn btn-pink" onclick="calculator.chooseOperation('+')">+</button>
                 
-                <!-- Linha final -->
+                <!-- linha final -->
                 <button class="btn btn-light">(-)</button>
                 <button class="btn btn-light">Eng</button>
                 <button class="btn btn-light" colspan="2"></button>
                 
-                <!-- Botão de igual -->
+                <!-- botão de igual -->
                 <button class="btn btn-equals" onclick="calculator.compute()">=</button>
             </div>
         </div>
